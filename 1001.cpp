@@ -45,5 +45,7 @@ int main(int argc, char const *argv[]) {
     cout<<dist[i]<<" ";
   }
 
+  cout<<endl;
+
   return 0;
 }
