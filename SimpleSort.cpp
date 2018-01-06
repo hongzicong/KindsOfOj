@@ -1,6 +1,5 @@
 #include <iostream>
 #include <map>
-#include <algorithm>
 
 using namespace std;
 
@@ -21,22 +20,36 @@ bool cmp(int *a,int *b){
     return false;
 }
 
+void swapArr(int *a,int *b){
+    int temp;
+    for(int i=0;i<11;++i){
+        temp=a[i];
+        a[i]=b[i];
+        b[i]=temp;
+    }
+}
+
 int main(void){
 
     int T;
     cin>>T;
+    int mArray[100][11];
     while(T-->0){
-        int array[100][11];
         int Q;
         int temp;
         cin>>N>>M;
+
         for(int i=0;i<N;++i){
             for(int j=0;j<M;++j){
                 cin>>temp;
-                array[i][j]=temp;
+                mArray[i][j]=temp;
             }
         }
-        int resultOrder[10][10];
+
+        for(int j=0;j<N;++j){
+            mArray[j][10]=j;
+        }
+
         cin>>Q;
         for(int i=0;i<Q;++i){
             mMap.clear();
@@ -44,28 +57,22 @@ int main(void){
                 cin>>temp;
                 mMap.insert(make_pair(temp,j));
             }
-            for(int j=0;j<100;++j){
-                array[j][10]=j;
-            }
+
+            //bubble sort
             for(int j=0;j<N-1;++j){
-                for(int k=j+1;k<N;++k){
-                    if(cmp(array[j],array[k])){
-                        temp=array[j][10];
-                        array[j][10]=array[k][10];
-                        array[k][10]=temp;
+                for(int k=0;k<N-1-j;++k){
+                    if(cmp(mArray[k],mArray[k+1])){
+                        swapArr(mArray[k],mArray[k+1]);
                     }
                 }
             }
+
             for(int j=0;j<N;++j){
-                resultOrder[i][j]=array[j][10];
-            }
-        }
-        for(int i=0;i<Q;++i){
-            for(int j=0;j<N;++j){
-                cout<<resultOrder[i][j]<<((j==N-1)?"":" ");
+                cout<<mArray[j][10]<<((j==N-1)?"":" ");
             }
             cout<<endl;
         }
+
     }
 
     return 0;
