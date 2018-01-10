@@ -3,4 +3,4 @@ project(Test)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(SicilyOj Stack_Queue_List/DoubleStackSort.cpp)
+add_executable(SicilyOj Search/SimpleHash.cpp)

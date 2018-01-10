@@ -59,8 +59,7 @@ void calculate(void){
             if (count < n*2) {
                 cout << " ";
             }
-        }
-        else if(color[i]==2){
+        } else if(color[i]==2){
             s2.push(v[i]);
             cout<<"c";
             count++;
@@ -68,6 +67,7 @@ void calculate(void){
                 cout << " ";
             }
         }
+
         while((!s1.empty()&&s1.top()==curr)||(!s2.empty()&&s2.top()==curr)){
             if(!s1.empty()&&s1.top()==curr){
                 s1.pop();
@@ -88,6 +88,7 @@ void calculate(void){
                 curr++;
             }
         }
+
     }
     cout<<endl;
 }
