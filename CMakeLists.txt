@@ -3,4 +3,4 @@ project(Test)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(SicilyOj Search/numberK.cpp)
+add_executable(SicilyOj Sort/MergeSort_Example.cpp)
