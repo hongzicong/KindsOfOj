@@ -3,4 +3,5 @@ project(Test)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(SicilyOj Sort/MergeSort_Example.cpp)
+set(CMAKE_SOURCE_DIR  Sort/BinarySearchable.cpp Sort/MergeSort_Example.cpp Sort/EasySort.cpp Tree/TraversalTree.cpp)
+add_executable(SicilyOj Graph/OrderingTasks.cpp)

@@ -1,8 +1,7 @@
 #include <iostream>
-
 using namespace std;
 
-int id[100001];
+int id[1000];
 
 int find(int a);
 void union_me(int a,int b);
@@ -36,9 +35,6 @@ int find(int a){
 void union_me(int a,int b){
   int aRoot=find(a);
   int bRoot=find(b);
-  if(aRoot==bRoot){
-    return;
-  }
   id[aRoot]=bRoot;
 }
 
